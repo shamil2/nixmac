@@ -27,7 +27,11 @@
       fzf.enable = true;
       fzf.enableZshIntegration = true;
       exa.enable = true;
-      git.enable = true;
+      git ={
+        enable =true;
+        userName = "shamil";
+        userEmail = "shamil@ghaseeta.com";
+      };
       zsh.enable = true;
       # zsh.enableCompletion = true;
       zsh.enableAutosuggestions = true;

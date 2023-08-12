@@ -26,6 +26,9 @@
     defaults.NSGlobalDomain.KeyRepeat = 1;
     stateVersion = 4;
   };
+  # Add ability to used TouchID for sudo authentication
+  security.pam.enableSudoTouchIdAuth = true;
+
   fonts.fontDir.enable = true; # DANGER
   fonts.fonts =
     [ pkgs.nerdfonts];
@@ -39,12 +42,12 @@
     masApps = {};
     casks = [
       "copyq"
-      "hightop"
       "bitwarden"
       "firefox"
       "google-chrome"
       "rectangle"
       "postman"
+      "drawio"
       ];
     taps = [];
     brews =[];

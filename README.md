@@ -37,3 +37,6 @@ rm -rf /nix
 ```
  darwin-rebuild switch --flake /Users/shamil/projects/nix/nixmac/.#
 ```
+
+
+https://gist.github.com/smunix/02d7a208a8478ebb4cbc4afe47e5ea8d

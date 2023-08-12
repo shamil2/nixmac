@@ -1,6 +1,10 @@
 { pkgs, ... }: {
     # Don't change this when you change package input. Leave it alone.
     home.stateVersion = "22.11";
+   nixpkgs.config = {
+    allowUnfree = true;
+    # more stuff
+  };
     # specify my home-manager configs
     home.packages = with pkgs; [ 
         ripgrep
@@ -8,6 +12,9 @@
         curl
         less
         google-cloud-sdk
+        docker
+        kubectl
+        k9s
       ];
     home.sessionVariables = {
       PAGER = "less";
@@ -27,7 +34,7 @@
       zsh.syntaxHighlighting.enable = true;
       zsh.shellAliases = {
          ls = "ls --color=auto -F"; 
-         nixswitch = "darwin-rebuild switch --flake /Users/shamilghaseeta/projects/test/nix/test_macos/src/system-config/.#";
+         nixswitch = "darwin-rebuild switch --flake /Users/shamil/projects/nix/nixmac/.#";
          nixup =" pushd /Users/shamilghaseeta/projects/test/nix/test_macos/src/system-config/; nix flake update; nixswitch; popd";
          };
       starship.enable = true;

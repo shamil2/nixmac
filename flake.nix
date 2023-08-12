@@ -24,7 +24,7 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.shamilghaseeta.imports = [
+              users.shamil.imports = [
                 ./modules/home-manager
               ];
             };

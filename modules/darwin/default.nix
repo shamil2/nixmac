@@ -1,10 +1,15 @@
 { pkgs, ... }: {
   # here go the darwin preferences and config items
   programs.zsh.enable = true;
+  nixpkgs.config.allowUnfree = true; 
   environment = {
     shells = with pkgs; [ bash zsh ];
     loginShell = pkgs.zsh;
-    systemPackages = [ pkgs.coreutils ];
+    systemPackages = with pkgs;[ 
+      coreutils
+      openvpn
+      yubikey-manager
+      ];
   };
 
   nix.extraOptions = ''
@@ -26,13 +31,21 @@
     [ pkgs.nerdfonts];
   services.nix-daemon.enable = true;
 
-  users.users.shamilghaseeta.home = "/Users/shamilghaseeta";
+  users.users.shamil.home = "/Users/shamil";
   homebrew = {
     enable = true;
     caskArgs.no_quarantine = true;
     global.brewfile = true;
     masApps = {};
-    casks = [];
+    casks = [
+      "copyq"
+      "hightop"
+      "bitwarden"
+      "firefox"
+      "google-chrome"
+      "rectangle"
+      "postman"
+      ];
     taps = [];
     brews =[];
   };
